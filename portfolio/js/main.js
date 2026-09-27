@@ -1,12 +1,53 @@
 /**
- * main.js —— 仅负责四件事：
+ * main.js —— 仅负责五件事：
  *   1) 项目数据渲染
  *   2) 滚动监听与导航高亮
  *   3) 滚动出现动画（IntersectionObserver）
  *   4) 移动端菜单切换 + 返回顶部
+ *   5) 深浅色主题切换（localStorage 记忆）
  */
 (function () {
   "use strict";
+
+  var THEME_KEY = "portfolio-theme";
+
+  /** 应用主题到 <html data-theme> */
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
+
+  /** 初始化主题：读取 localStorage，默认浅色 */
+  function initTheme() {
+    var saved = null;
+    try {
+      saved = localStorage.getItem(THEME_KEY);
+    } catch (e) { /* 隐私模式等场景下忽略 */ }
+    applyTheme(saved === "dark" ? "dark" : "light");
+  }
+
+  /** 主题切换按钮 */
+  function setupThemeToggle() {
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+
+    function syncLabel() {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.setAttribute("aria-label", isDark ? "切换浅色主题" : "切换深色主题");
+      btn.setAttribute("title", isDark ? "切换浅色主题" : "切换深色主题");
+    }
+
+    btn.addEventListener("click", function () {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      var next = isDark ? "light" : "dark";
+      applyTheme(next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) { /* 忽略写入失败 */ }
+      syncLabel();
+    });
+
+    syncLabel();
+  }
 
   /** 把 YYYY-MM 格式化为 YYYY.MM */
   function formatDate(date) {
@@ -199,11 +240,13 @@
 
   /** 初始化 */
   function init() {
+    initTheme(); // 尽早应用已保存的主题，避免闪烁
     renderProjects();
     observeReveal(document.querySelectorAll(".reveal"));
     setupNavHighlight();
     setupMobileMenu();
     setupBackToTop();
+    setupThemeToggle();
   }
 
   if (document.readyState === "loading") {
