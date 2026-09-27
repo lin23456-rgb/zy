@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林国俊 · 个人作品集 | 软件工程 · 全栈与 AI 应用构建</title>
+  <meta name="description" content="林国俊的个人作品集：软件工程专业，关注 Web 全栈开发与 AI 应用构建，展示校园二手交易平台、AI 课程问答助手等项目作品。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#projects">跳到主要内容</a>
+
+  <div class="layout">
+    <!-- ============ 左侧固定侧边栏 ============ -->
+    <aside class="sidebar" id="sidebar" aria-label="个人名片与导航">
+      <div class="sidebar__inner">
+        <header class="profile">
+          <div class="profile__avatar" aria-hidden="true">林</div>
+          <h1 class="profile__name">林国俊</h1>
+          <p class="profile__role">软件工程 · Web 全栈 / AI 应用构建</p>
+        </header>
+
+        <!-- 移动端可折叠区 -->
+        <div class="sidebar__collapsible" id="sidebarCollapsible">
+          <section class="intro" aria-label="简短介绍">
+            <p>
+              软件工程专业在读，主要关注 <strong>Web 全栈开发与 AI 应用构建</strong> 方向，
+              平时使用 Python、Java 和 TypeScript 做项目。
+            </p>
+          </section>
+
+          <section class="skills" aria-label="核心技能">
+            <h2 class="sidebar__title">核心技能</h2>
+            <ul class="skill-tags">
+              <li>Python</li>
+              <li>Java</li>
+              <li>TypeScript</li>
+              <li>HTML/CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </section>
+        </div>
+
+        <nav class="nav" id="nav" aria-label="页面导航">
+          <a href="#intro" class="nav__link">个人介绍</a>
+          <a href="#projects" class="nav__link">项目作品</a>
+          <a href="#about" class="nav__link">关于我</a>
+          <a href="#contact" class="nav__link">联系方式</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="sidebarCollapsible">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__label">展开</span>
+        </button>
+
+        <footer class="sidebar__contact">
+          <a class="status-dot" href="#contact" aria-label="在读状态">
+            <span class="status-dot__pulse"></span>广州软件学院 · 在读
+          </a>
+          <p class="social">所在地 · 中国·广州</p>
+        </footer>
+      </div>
+    </aside>
+
+    <!-- ============ 右侧主内容区 ============ -->
+    <main class="main">
+      <!-- 个人介绍 -->
+      <section class="hero reveal" id="intro" aria-labelledby="hero-title">
+        <p class="section-label">个人介绍 / Profile</p>
+        <h2 class="hero__greeting">你好，我是</h2>
+        <h3 class="hero__title" id="hero-title">专注 Web 全栈与 AI 应用构建的软件工程学生</h3>
+        <p class="hero__desc">
+          软件工程专业在读，主要关注 <strong>Web 全栈开发与 AI 应用构建</strong> 方向。
+          平时使用 Python、Java 和 TypeScript 进行项目开发，也在持续学习前端框架、后端服务
+          与人工智能应用开发，希望将所学知识落地为可用的产品。下面是我做过的两个项目，
+          欢迎老师、同学和招聘伙伴了解。
+        </p>
+        <a href="#projects" class="hero__cta">查看项目作品 ↓</a>
+      </section>
+
+      <!-- 项目作品 -->
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <header class="section-head reveal">
+          <p class="section-label">项目作品 / Works</p>
+          <h2 class="section-title" id="projects-title">把所学知识落地为可用产品的实践</h2>
+          <p class="section-sub">
+            以下项目由 <code>js/data.js</code> 数据驱动渲染，新增项目只需追加一条记录。
+          </p>
+        </header>
+        <div class="project-list" id="projectList" aria-live="polite">
+          <!-- 项目由 main.js 渲染注入 -->
+        </div>
+      </section>
+
+      <!-- 关于我 -->
+      <section class="about reveal" id="about" aria-labelledby="about-title">
+        <header class="section-head">
+          <p class="section-label">关于我 / About</p>
+          <h2 class="section-title" id="about-title">学习、实践与落地</h2>
+        </header>
+        <div class="about__grid">
+          <article class="about__block">
+            <h3>教育背景</h3>
+            <p><strong>广州软件学院 · 软件工程</strong></p>
+            <p class="about__meta">在读</p>
+          </article>
+          <article class="about__block">
+            <h3>关注方向</h3>
+            <p>Web 全栈开发、AI 应用构建。</p>
+          </article>
+          <article class="about__block">
+            <h3>正在学习</h3>
+            <p>前端框架、后端服务、人工智能应用开发。</p>
+          </article>
+          <article class="about__block">
+            <h3>自我陈述</h3>
+            <p>软件工程专业学生，平时使用 Python、Java 与 TypeScript 做项目，希望将所学知识落地为可用的产品。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 联系方式 -->
+      <section class="contact reveal" id="contact" aria-labelledby="contact-title">
+        <header class="section-head">
+          <p class="section-label">联系方式 / Contact</p>
+          <h2 class="section-title" id="contact-title">欢迎交流与合作</h2>
+          <p class="section-sub">所在地与院校信息如下。</p>
+        </header>
+        <ul class="contact__list">
+          <li>
+            <span class="contact__key">所在地</span>
+            <span class="contact__value">中国·广州</span>
+          </li>
+          <li>
+            <span class="contact__key">学校</span>
+            <span class="contact__value">广州软件学院</span>
+          </li>
+          <li>
+            <span class="contact__key">专业</span>
+            <span class="contact__value">软件工程</span>
+          </li>
+          <li>
+            <span class="contact__key">方向</span>
+            <span class="contact__value">Web 全栈 / AI 应用构建</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="site-footer">
+        <p>© 2026 林国俊 · 个人作品集 · 原生 HTML / CSS / JavaScript 实现</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="to-top" id="toTop" type="button" aria-label="返回顶部" hidden>↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
